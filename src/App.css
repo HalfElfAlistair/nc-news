@@ -1,38 +1,86 @@
-.App {
+/* * {
+  border: solid 1px black;
+} */
+
+body {
+  background-color: grey;
+}
+
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form,
+.article-card,
+#articles {
+  margin: 5%;
+  padding: 2%;
+  background-color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+form * {
+  display: block;
+}
+
+form * label,
+form * select,
+form * button {
+  display: inline;
+  margin: 3px;
+}
+
+ul {
+  padding: 0;
+}
+
+.article-card {
+  list-style: none;
+  box-shadow: 2px 6px 15px rgb(0 0 0 / 10%);
+}
+
+#breadcrumbs {
+  margin: 5%;
+}
+
+
+
+@media only screen and (min-width: 1024px) {
+
+  form,
+  #articles,
+  #breadcrumbs {
+    margin: 5% 10%;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  form * {
+    display: inline;
   }
-  to {
-    transform: rotate(360deg);
+
+  form #topic-query {
+    margin-right: 5%;
+  }
+
+  form #sort-query {
+    margin-left: 5%;
+  }
+
+  .article-card {
+    width: 300px;
+    margin: 2.5%
+  }
+
+  #articles ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+
+}
+
+@media only screen and (min-width: 1440px) {
+  form,
+  #articles,
+  #breadcrumbs {
+    margin: 5% 5%;
   }
 }
