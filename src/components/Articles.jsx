@@ -2,16 +2,25 @@ import { useEffect, useState } from "react";
 import ArticleCard from "./ArticleCard";
 import { getArticles } from "../utils/api";
 
-const Articles = () => {
+const Articles = ({queryState}) => {
 
     const [articlesList, setArticlesList] = useState([]);
 
+    const [isLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
-        getArticles()
+        getArticles(queryState)
             .then((articlesFromApi) => {
                 setArticlesList(articlesFromApi);
+                setIsLoading(false)
             })
-    }, [])
+    }, [queryState])
+
+    if (isLoading) {
+        return <div className="loading">
+                <p>Just fetching the articles now...</p>
+            </div>
+    }
 
     return <div id="articles">
         <ul>

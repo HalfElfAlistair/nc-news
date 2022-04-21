@@ -3,16 +3,19 @@
 } */
 
 body {
-  background-color: grey;
+  background-color: #6B4D7C;
 }
 
 h1 {
   text-align: center;
+  color: #FAF9F9;
 }
 
 form,
 .article-card,
-#articles {
+#articles,
+#topic-box,
+.loading {
   margin: 5%;
   padding: 2%;
   background-color: white;
@@ -29,6 +32,10 @@ form * button {
   margin: 3px;
 }
 
+form * select {
+  padding: 2px;
+}
+
 ul {
   padding: 0;
 }
@@ -41,6 +48,20 @@ ul {
 #breadcrumbs {
   margin: 5%;
 }
+
+#breadcrumbs p,
+#breadcrumbs a,
+#breadcrumbs a:visited {
+  display: inline;
+  color: #FAF9F9;
+  text-decoration: none;
+}
+
+#breadcrumbs a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 
 
 
