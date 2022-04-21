@@ -32,6 +32,10 @@ form * button {
   margin: 3px;
 }
 
+form * select {
+  padding: 2px;
+}
+
 ul {
   padding: 0;
 }
