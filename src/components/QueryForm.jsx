@@ -16,7 +16,6 @@ const QueryForm = ({topicsList, setTopicSlug, setQuerystate}) => {
         <select onChange={(event) => {
             setTopicSelect(event.target.value);
             setRouteState(routeSelect(event.target.value));
-            event.preventDefault();
         }}>
             <option value="">all articles</option>
             {topicsList.map(topic => {
