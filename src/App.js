@@ -27,20 +27,22 @@ function App() {
           })
   }, [])
 
-if (isLoading) {
-  return <div className="loading">
-            <p>Getting some data for you...</p>
-        </div>
-}
+  if (isLoading) {
+    return <div className="loading">
+              <p>Getting some data for you...</p>
+          </div>
+  } else {
+    return <div>
+        <Breadcrumbs />
+        <Header/>
+        <Routes>
+          <Route path="/" element={<Home topicsList={topicsList} setTopicSlug={setTopicSlug} queryState={queryState} setQuerystate={setQuerystate} />} />
+          <Route path={"/" + topicSlug} element={<Topic topicSlug={topicSlug} topicsList={topicsList} queryState={queryState} setQuerystate={setQuerystate} />} />
+        </Routes>
+    </div>
+  }
 
-return <div>
-      <Breadcrumbs />
-      <Header/>
-      <Routes>
-        <Route path="/" element={<Home topicsList={topicsList} setTopicSlug={setTopicSlug} queryState={queryState} setQuerystate={setQuerystate} />} />
-        <Route path={"/" + topicSlug} element={<Topic topicSlug={topicSlug} topicsList={topicsList} queryState={queryState} setQuerystate={setQuerystate} />} />
-      </Routes>
-  </div>
+
 }
 
 export default App;

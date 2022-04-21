@@ -3,11 +3,12 @@
 } */
 
 body {
-  background-color: grey;
+  background-color: #6B4D7C;
 }
 
 h1 {
   text-align: center;
+  color: #FAF9F9;
 }
 
 form,
@@ -44,9 +45,19 @@ ul {
   margin: 5%;
 }
 
-#breadcrumbs p {
+#breadcrumbs p,
+#breadcrumbs a,
+#breadcrumbs a:visited {
   display: inline;
+  color: #FAF9F9;
+  text-decoration: none;
 }
+
+#breadcrumbs a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 
 
 
