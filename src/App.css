@@ -12,7 +12,9 @@ h1 {
 
 form,
 .article-card,
-#articles {
+#articles,
+#topic-box,
+.loading {
   margin: 5%;
   padding: 2%;
   background-color: white;
@@ -40,6 +42,10 @@ ul {
 
 #breadcrumbs {
   margin: 5%;
+}
+
+#breadcrumbs p {
+  display: inline;
 }
 
 
