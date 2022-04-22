@@ -33,10 +33,8 @@ const ArticlePage = () => {
                 <p className="content">{article.body}</p>
                 <div id="votes">
                     <p>Votes: {article.votes}</p>
-                    <button aria-labelledby="vote-up">
-                        <span id="vote-up" hidden>Vote up</span>
-                        <FaThumbsUp/></button>
-                    <button><FaThumbsDown/></button>
+                    <button aria-label="thumbs up"><FaThumbsUp/></button>
+                    <button aria-label="thumbs down"><FaThumbsDown/></button>
                 </div>
                 <div className="article-comments">
                     <p>Comments</p>

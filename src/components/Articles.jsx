@@ -24,9 +24,7 @@ const Articles = ({queryState, topic, topicSlug}) => {
         return <div id="articles">
             <ul>
                 {articlesList.map((articleData) => {
-                    return <>
-                        <ArticleCard key={articleData.article_id} articleData={articleData} topic={topic} id={articleData.article_id} topicSlug={topicSlug}/>
-                    </>
+                    return <ArticleCard key={articleData.article_id} articleData={articleData} topic={topic} id={articleData.article_id} topicSlug={topicSlug}/>
                 })}
             </ul>
         </div>
