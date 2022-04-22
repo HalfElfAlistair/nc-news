@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import {dateExtract} from "../utils/helpers";
 
-const ArticleCard = ({ articleData, topicSlug }) => {
+const ArticleCard = ({ articleData }) => {
  
-    return <Link to={`/${(topicSlug) ? topicSlug : "articles"}/${articleData.article_id}`} >   
+    return <Link to={`/articles/${articleData.article_id}`} >
         <li className="article-card">
             <h2>{articleData.title}</h2>
             <p>By: {articleData.author}</p>

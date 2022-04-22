@@ -16,6 +16,7 @@ form,
 #articles,
 #topic-box,
 .loading,
+#article-page,
 .article-info,
 .article-comments {
   margin: 5%;
@@ -55,6 +56,10 @@ ul {
   overflow-wrap: break-word;
 }
 
+.read-assist {
+  overflow: hidden; 
+}
+
 #breadcrumbs {
   margin: 5%;
 }
@@ -85,7 +90,15 @@ ul {
   background-color: #FAF9F9;
 }
 
+#votes * {
+  display: inline;
+  margin-right: 3%;
+}
 
+#votes button {
+  padding: 2px;
+  width: 60px;
+}
 
 
 @media only screen and (min-width: 1024px) {

@@ -21,6 +21,8 @@ function App() {
 
   const [isLoading, setIsLoading] = useState(true);
 
+  console.log("topicSlug====>", topicSlug)
+
   useEffect(() => {
       getTopics()
           .then((topicsFromApi) => {
@@ -35,13 +37,11 @@ function App() {
           </div>
   } else {
     return <div>
-        <Breadcrumbs />
+        <Breadcrumbs topicSlug={topicSlug} topicsList={topicsList}/>
         <Header/>
         <Routes>
           <Route path={"/"} element={<Home topicsList={topicsList} setTopicSlug={setTopicSlug} queryState={queryState} setQuerystate={setQuerystate} />} />
-          {/* <Route path={"/articles"} element={<Home topicsList={topicsList} setTopicSlug={setTopicSlug} queryState={queryState} setQuerystate={setQuerystate} />} /> */}
           <Route path={`/${topicSlug}`} element={<Topic topicsList={topicsList} queryState={queryState} setQuerystate={setQuerystate} topicSlug={topicSlug} />} />
-          <Route path={`/${topicSlug}/:id`} element={<ArticlePage />} />
           <Route path={`/articles/:id`} element={<ArticlePage />} />
         </Routes>
     </div>
