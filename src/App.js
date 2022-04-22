@@ -7,10 +7,12 @@ import Breadcrumbs from './components/Breadcrumbs';
 import Header from "./components/Header";
 import Home from './components/Home';
 import Topic from "./components/Topic";
+import ArticlePage from "./components/ArticlePage";
 
 function App() {
 
   const location = useLocation();
+
   const [topicSlug, setTopicSlug] = useState(getLocation(location));
 
   const [topicsList, setTopicsList] = useState([]);
@@ -18,6 +20,8 @@ function App() {
   const [queryState, setQuerystate] = useState("");
 
   const [isLoading, setIsLoading] = useState(true);
+
+  console.log("topicSlug====>", topicSlug)
 
   useEffect(() => {
       getTopics()
@@ -33,11 +37,12 @@ function App() {
           </div>
   } else {
     return <div>
-        <Breadcrumbs />
+        <Breadcrumbs topicSlug={topicSlug} topicsList={topicsList}/>
         <Header/>
         <Routes>
-          <Route path="/" element={<Home topicsList={topicsList} setTopicSlug={setTopicSlug} queryState={queryState} setQuerystate={setQuerystate} />} />
-          <Route path={"/" + topicSlug} element={<Topic topicSlug={topicSlug} topicsList={topicsList} queryState={queryState} setQuerystate={setQuerystate} />} />
+          <Route path={"/"} element={<Home topicsList={topicsList} setTopicSlug={setTopicSlug} queryState={queryState} setQuerystate={setQuerystate} />} />
+          <Route path={`/${topicSlug}`} element={<Topic topicsList={topicsList} queryState={queryState} setQuerystate={setQuerystate} topicSlug={topicSlug} />} />
+          <Route path={`/articles/:id`} element={<ArticlePage />} />
         </Routes>
     </div>
   }

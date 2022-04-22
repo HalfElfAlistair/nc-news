@@ -8,8 +8,6 @@ const QueryForm = ({topicsList, setTopicSlug, setQuerystate}) => {
 
     const [topicSelect, setTopicSelect] = useState("");
 
-
-
    return <form>
        <div id="topic-query">
         <label>Select a topic</label>

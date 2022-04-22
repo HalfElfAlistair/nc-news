@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Articles from './Articles';
 import { capitalise, topicDescription } from '../utils/helpers';
 
-const Topic = ({topicSlug, topicsList, queryState, setQuerystate}) => {
+const Topic = ({topicsList, queryState, setQuerystate, topicSlug}) => {
 
     useEffect(()=>{
         setQuerystate("?topic=" + topicSlug)
@@ -12,9 +12,9 @@ const Topic = ({topicSlug, topicsList, queryState, setQuerystate}) => {
         <div>
             <div id="topic-box">
                 <h2>{capitalise(topicSlug)}</h2>
-                <p>{topicDescription(topicsList, topicSlug)}</p>
+                <p>{topicDescription(topicsList, topicSlug).description}</p>
             </div>
-            <Articles queryState={queryState} />
+            <Articles queryState={queryState} topicSlug={topicSlug} />
         </div>
     </section>;
 }
