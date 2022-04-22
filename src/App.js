@@ -7,10 +7,12 @@ import Breadcrumbs from './components/Breadcrumbs';
 import Header from "./components/Header";
 import Home from './components/Home';
 import Topic from "./components/Topic";
+import ArticlePage from "./components/ArticlePage";
 
 function App() {
 
   const location = useLocation();
+
   const [topicSlug, setTopicSlug] = useState(getLocation(location));
 
   const [topicsList, setTopicsList] = useState([]);
@@ -36,8 +38,11 @@ function App() {
         <Breadcrumbs />
         <Header/>
         <Routes>
-          <Route path="/" element={<Home topicsList={topicsList} setTopicSlug={setTopicSlug} queryState={queryState} setQuerystate={setQuerystate} />} />
-          <Route path={"/" + topicSlug} element={<Topic topicSlug={topicSlug} topicsList={topicsList} queryState={queryState} setQuerystate={setQuerystate} />} />
+          <Route path={"/"} element={<Home topicsList={topicsList} setTopicSlug={setTopicSlug} queryState={queryState} setQuerystate={setQuerystate} />} />
+          {/* <Route path={"/articles"} element={<Home topicsList={topicsList} setTopicSlug={setTopicSlug} queryState={queryState} setQuerystate={setQuerystate} />} /> */}
+          <Route path={`/${topicSlug}`} element={<Topic topicsList={topicsList} queryState={queryState} setQuerystate={setQuerystate} topicSlug={topicSlug} />} />
+          <Route path={`/${topicSlug}/:id`} element={<ArticlePage />} />
+          <Route path={`/articles/:id`} element={<ArticlePage />} />
         </Routes>
     </div>
   }

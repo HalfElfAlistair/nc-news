@@ -15,7 +15,9 @@ form,
 .article-card,
 #articles,
 #topic-box,
-.loading {
+.loading,
+.article-info,
+.article-comments {
   margin: 5%;
   padding: 2%;
   background-color: white;
@@ -45,6 +47,14 @@ ul {
   box-shadow: 2px 6px 15px rgb(0 0 0 / 10%);
 }
 
+.article-info h2 {
+  color: #6B4D7C;
+}
+
+.content {
+  overflow-wrap: break-word;
+}
+
 #breadcrumbs {
   margin: 5%;
 }
@@ -60,6 +70,19 @@ ul {
 #breadcrumbs a:hover {
   font-weight: bold;
   text-decoration: underline;
+}
+
+#articles a {
+  text-decoration: none;
+}
+
+#articles a:hover h2 {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#article-page div {
+  background-color: #FAF9F9;
 }
 
 
@@ -94,6 +117,10 @@ ul {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
+  }
+
+  #article-page div {
+    border: solid 1px black;
   }
 
 }

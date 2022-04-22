@@ -9,7 +9,9 @@ import { capitalise } from '../utils/helpers';
     return <nav id="breadcrumbs">
         <p><Link to="/">Home</Link></p>
         {crumbs.map((crumb) => {
-            return <p key={crumb}> &gt; <Link to={"/" + crumb}>{capitalise(crumb)}</Link></p>
+            if (crumb !== "articles") {
+                return <p key={crumb}> &gt; <Link to={"/" + crumb}>{capitalise(crumb)}</Link></p>
+            }
         })}
     </nav>;
 }

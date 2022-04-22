@@ -13,5 +13,11 @@ export const routeSelect = (topic) => {
 
 export const topicDescription = (topics, currSlug) => {
     const currTopic = topics.filter(topic => topic.slug === currSlug);
-    return currTopic[0].description;
+    // return currTopic[0].description;
+    return currTopic[0];
+}
+
+export const dateExtract = (timeStamp) => {
+    let date = timeStamp.slice(0, 10);
+    return date.split("-").reverse().join("-");
 }
