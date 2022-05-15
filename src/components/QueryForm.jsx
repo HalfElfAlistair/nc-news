@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { routeSelect } from '../utils/helpers';
 
+
 const QueryForm = ({topicsList, setTopicSlug, setQuerystate}) => {
 
     const [routeState, setRouteState] = useState("");
@@ -10,12 +11,12 @@ const QueryForm = ({topicsList, setTopicSlug, setQuerystate}) => {
 
    return <form>
        <div id="topic-query">
-        <label>Select a topic</label>
-        <select onChange={(event) => {
+        <label>Topics</label>
+        <select aria-expanded="false" onChange={(event) => {
             setTopicSelect(event.target.value);
             setRouteState(routeSelect(event.target.value));
         }}>
-            <option value="">all articles</option>
+            <option value="">All Articles</option>
             {topicsList.map(topic => {
                 return <option key={topic.slug} value={topic.slug}>{topic.slug}</option>
             })}
@@ -23,18 +24,18 @@ const QueryForm = ({topicsList, setTopicSlug, setQuerystate}) => {
         <button>
         <Link to={routeState} onClick={(e) => {
             setTopicSlug(topicSelect);
-            setQuerystate("?topic=" + topicSelect);
+            setQuerystate(topicSelect ? "?topic=" + topicSelect : "");
         }}>Go</Link>
         </button>
        </div>
        <div id="sort-query">
-        <label>Sort articles by:</label>
+        <label>Sort by</label>
         <select>
-                <option>article id</option>
-                <option>date created</option>
-                <option>votes</option>
+                <option>Article Id</option>
+                <option>Date Created</option>
+                <option>Votes</option>
             </select>
-            <button>Asc</button>
+            <button>Ascending</button>
        </div>
     </form>
 }
