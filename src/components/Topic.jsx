@@ -10,7 +10,7 @@ const Topic = ({topicsList, queryState, setQuerystate, topicSlug}) => {
 
     return <section>
         <div>
-            <div id="topic-box">
+            <div className="page-intro">
                 <h2>{capitalise(topicSlug)}</h2>
                 <p>{topicDescription(topicsList, topicSlug).description}</p>
             </div>
