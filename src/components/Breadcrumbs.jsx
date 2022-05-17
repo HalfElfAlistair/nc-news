@@ -5,8 +5,6 @@ const Breadcrumbs = ({setTopicSlug, topicSlug, topicsList}) => {
         
     const topicsArray = topicsList.map(topicObj => topicObj.slug)
 
-    console.log("topicsArray===>", topicsArray)
-
     const location = useLocation();
     const crumbs = location.pathname.split("/").slice(1);
 

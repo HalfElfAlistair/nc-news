@@ -3,14 +3,16 @@ import {dateExtract} from "../utils/helpers";
 
 const ArticleCard = ({ articleData }) => {
  
-    return <Link to={`/articles/${articleData.article_id}`} >
-        <li className="article-card">
-            <h2>{articleData.title}</h2>
+    return <li className="article-card">
+            <h3>{articleData.title}</h3>
             <p>By: {articleData.author}</p>
             <p>On: {dateExtract(articleData.created_at)}</p>
-            <p>Votes: {articleData.votes}</p>
+            <div id="article-card-bottom">
+                <p>Votes: {articleData.votes}</p>
+                <Link to={`/articles/${articleData.article_id}`}><button>Read More</button></Link>
+            </div>
         </li>
-    </Link>
+    
      
 }
 
