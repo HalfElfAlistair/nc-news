@@ -18,6 +18,13 @@ export const getTopics = () => {
         })      
 }
 
+export const getComments = (id) => {
+    return ncNewsApi.get(`/articles/${id}/comments`)
+        .then(({ data }) => {
+            return data.comments;
+        })      
+}
+
 export const getArticleById = (id) => {
     return ncNewsApi.get(`/articles/${id}`)
         .then(({ data }) => {

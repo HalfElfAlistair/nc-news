@@ -3,6 +3,7 @@ import { getArticleById } from "../utils/api";
 import { useParams } from 'react-router-dom';
 import {dateExtract} from "../utils/helpers";
 import Votes from './Votes';
+import Comments from './Comments';
 
 const ArticlePage = ({setError}) => {
 
@@ -35,20 +36,7 @@ const ArticlePage = ({setError}) => {
                 <p>Posted on {dateExtract(article.created_at)}</p>
                 <p className="content">{article.body}</p>
                 <Votes article={article} setError={setError} />
-                <div className="article-comments">
-                    <p>Comments</p>
-                    <p>Comment Count: {article.comment_count}</p>
-                    <div>
-                        <p className="content">Comment Comment Comment Comment Comment Comment Comment Comment Comment Comment Comment Comment Comment Comment Comment</p>
-                        <button>delete</button>
-                    </div>
-                    <div>
-                        <button>view more...</button>
-                        <label>Add a comment</label>
-                        <input type="text"></input>
-                        <button>Post</button>
-                    </div>
-                </div>
+                <Comments article={article} setError={setError} />
             </div>
             
         </section>

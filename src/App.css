@@ -108,6 +108,36 @@ ul {
   overflow: hidden; 
 }
 
+.comment-card {
+  border-bottom: solid 1px #E5E4E4;
+  margin-bottom: 5%;
+}
+
+.comment-content {
+  display: block;
+  margin-bottom: 5%;
+}
+
+.comment-author,
+.comment-body {
+  display: inline;
+}
+
+.comment-card button {
+  display: block;
+  margin-bottom: 5%;
+}
+
+.view-toggle {
+  background-color: #6B4D7C;
+  color: #FAF9F9;
+  width: 150px;
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 10px;
+}
+
 #breadcrumbs {
   margin: 5%;
 }
@@ -142,7 +172,6 @@ ul {
   border-radius: 3px;
   font-size: 15px;
   padding: 10px;
-  width: 120px;
   display: inline;
 }
 
@@ -183,16 +212,21 @@ ul {
   padding: 0 5px 2px;
 }
 
-#votes button {
+#votes button,
+.comment-card button {
   padding: 3px 2px 2px;
   width: 26px;
   height: 25px;
   border-radius: 3px;
   background-color: #6B4D7C;
+}
+
+#votes button {
   margin: 0 5% 0 0;
 }
 
-#votes svg {
+#votes svg,
+.comment-card svg {
   margin: 0;
   color: #FAF9F9;
 }
