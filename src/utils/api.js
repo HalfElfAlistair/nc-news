@@ -5,7 +5,6 @@ const ncNewsApi = axios.create({
 });
 
 export const getArticles = (query) => {
-    // console.log("query ===>", query)
     return ncNewsApi.get((query) ? `/articles${query}` : "/articles")
         .then(({ data }) => {
             return data.articles;
@@ -23,5 +22,12 @@ export const getArticleById = (id) => {
     return ncNewsApi.get(`/articles/${id}`)
         .then(({ data }) => {
             return data.article;
+        })      
+}
+
+export const patchArticleById = (id, votesObj) => {
+    return ncNewsApi.patch(`/articles/${id}`, votesObj)
+        .then(({ data }) => {
+            return data;
         })      
 }
