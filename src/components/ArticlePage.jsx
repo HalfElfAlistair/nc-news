@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { getArticleById } from "../utils/api";
 import { useParams } from 'react-router-dom';
 import {dateExtract} from "../utils/helpers";
-import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
+import Votes from './Votes';
 
-const ArticlePage = () => {
+const ArticlePage = ({setError}) => {
 
     const {id} = useParams();
 
@@ -18,7 +18,10 @@ const ArticlePage = () => {
                 setArticle(articleFromApi);
                 setIsLoading(false)
             })
-    }, [id])
+            .catch((err) => {
+                setError({ err });
+            })
+    }, [id, setError])
 
     if (isLoading) {
         return <div className="loading">
@@ -31,11 +34,7 @@ const ArticlePage = () => {
                 <p>By {article.author}</p>
                 <p>Posted on {dateExtract(article.created_at)}</p>
                 <p className="content">{article.body}</p>
-                <div id="votes">
-                    <p>Votes: {article.votes}</p>
-                    <button aria-label="thumbs up"><FaThumbsUp/></button>
-                    <button aria-label="thumbs down"><FaThumbsDown/></button>
-                </div>
+                <Votes article={article} setError={setError} />
                 <div className="article-comments">
                     <p>Comments</p>
                     <p>Comment Count: {article.comment_count}</p>

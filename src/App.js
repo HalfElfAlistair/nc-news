@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import Home from './components/Home';
 import Topic from "./components/Topic";
 import ArticlePage from "./components/ArticlePage";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
 
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log("topicSlug====>", topicSlug)
+  const [error, setError] = useState(null);
 
   useEffect(() => {
       getTopics()
@@ -29,7 +30,19 @@ function App() {
               setTopicsList(topicsFromApi);
               setIsLoading(false)
           })
+          .catch((err) => {
+            setError({ err });
+          });
   }, [])
+
+  if (error) {
+    return (
+      <div>
+        <Breadcrumbs topicSlug={topicSlug} topicsList={topicsList}/>
+        <ErrorPage message={error} />
+      </div>
+    ) 
+  }
 
   if (isLoading) {
     return <div className="loading">
@@ -40,9 +53,15 @@ function App() {
         <Breadcrumbs topicSlug={topicSlug} topicsList={topicsList}/>
         <Header/>
         <Routes>
-          <Route path={"/"} element={<Home topicsList={topicsList} setTopicSlug={setTopicSlug} queryState={queryState} setQuerystate={setQuerystate} />} />
+          <Route path={"/"} element={<Home 
+          topicsList={topicsList} 
+          setTopicSlug={setTopicSlug} 
+          queryState={queryState} setQuerystate={setQuerystate} 
+          setError={setError}
+          />} />
           <Route path={`/${topicSlug}`} element={<Topic topicsList={topicsList} queryState={queryState} setQuerystate={setQuerystate} topicSlug={topicSlug} />} />
-          <Route path={`/articles/:id`} element={<ArticlePage />} />
+          <Route path={`/articles/:id`} element={<ArticlePage setError={setError} />} />
+          <Route path="*" element={<ErrorPage/>} />
         </Routes>
     </div>
   }
