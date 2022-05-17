@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ArticleCard from "./ArticleCard";
 import { getArticles } from "../utils/api";
 
-const Articles = ({queryState, topic, topicSlug}) => {
+const Articles = ({queryState, topic, topicSlug, setError}) => {
 
     const [articlesList, setArticlesList] = useState([]);
 
@@ -14,7 +14,10 @@ const Articles = ({queryState, topic, topicSlug}) => {
                 setArticlesList(articlesFromApi);
                 setIsLoading(false)
             })
-    }, [queryState])
+            .catch((err) => {
+                setError({ err });
+            })
+    }, [queryState, setError])
 
     if (isLoading) {
         return <div className="loading">
