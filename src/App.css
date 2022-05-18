@@ -19,18 +19,10 @@ h3 {
   color: #1F1F1F;
 }
 
-form {
-  margin: 5%;
-  padding: 5%;
-  background-color: #FAF9F9;
-  border-radius: 3px;
-}
-
 #articles,
 .loading,
 #article-page,
-.article-info,
-.article-comments {
+.article-info {
   margin: 5%;
   padding: 2%;
   background-color: #FAF9F9;
@@ -138,6 +130,14 @@ ul {
   padding: 10px;
 }
 
+#comment-submit {
+  background-color: #6B4D7C;
+  color: #FAF9F9;
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
+}
+
 #breadcrumbs {
   margin: 5%;
 }
@@ -230,6 +230,32 @@ ul {
   margin: 0;
   color: #FAF9F9;
 }
+
+#query-form {
+  margin: 5%;
+  padding: 5%;
+  background-color: #FAF9F9;
+  border-radius: 3px;
+}
+
+#add-comment {
+  margin-top: 5%;
+}
+
+#comment-input,
+#comment-submit {
+  display: inline;
+}
+
+#comment-input {
+  border-radius: 3px;
+  font-size: 15px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+
+
 
 /* #topic-query {
   border-right: solid 1px #E5E4E4;
