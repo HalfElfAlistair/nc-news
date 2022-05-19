@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getComments } from "../utils/api";
 import CommentCard from "./CommentCard";
+import AddComment from "./AddComment";
 
 
 const Comments = ({article, setError}) => {
@@ -8,17 +9,19 @@ const Comments = ({article, setError}) => {
     const [commentsList, setCommentsList] = useState([]);
     const [commentsView, setCommentsView] = useState("Show Comments");
     const [isLoading, setIsLoading] = useState(true);
+    const [commentCount, setCommentCount] = useState(0);
 
     useEffect(() => {
         getComments(article.article_id)
             .then((commentsFromApi) => {
                 setCommentsList(commentsFromApi)
+                setCommentCount(article.comment_count)
                 setIsLoading(false)
             })
             .catch((err) => {
                 setError({ err });
             });
-    }, [article.article_id, setError])
+    }, [article.article_id, setError, article.comment_count])
 
     const showHideComments = (viewState) => {
         return (viewState === "Show Comments") 
@@ -44,7 +47,7 @@ const Comments = ({article, setError}) => {
         return (
             <div className="article-comments">
                 <h3>Comments</h3>
-                <p>{article.comment_count} comments</p>
+                <p>{commentCount} comments</p>
                 <button className="view-toggle" onClick={(e) => {
                     (commentsView === "Show Comments") 
                     ? 
@@ -55,11 +58,7 @@ const Comments = ({article, setError}) => {
                     <div id="comments-feed">
                         {showHideComments(commentsView)}
                     </div>
-                <div>
-                    <label>Add a comment</label>
-                    <input type="text"></input>
-                    <button>Post</button>
-                </div>
+                    <AddComment setCommentsList={setCommentsList} setCommentCount={setCommentCount} article={article} setError={setError} />
             </div>
         )
     }

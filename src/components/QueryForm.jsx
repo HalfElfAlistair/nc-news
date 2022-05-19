@@ -9,8 +9,9 @@ const QueryForm = ({topicsList, setTopicSlug, setQuerystate}) => {
 
     const [topicSelect, setTopicSelect] = useState("");
 
-   return <form>
-       <div id="topic-query">
+   return (
+    <form id="query-form">
+        <div id="topic-query">
         <label>Topics</label>
         <select aria-expanded="false" onChange={(event) => {
             setTopicSelect(event.target.value);
@@ -27,8 +28,8 @@ const QueryForm = ({topicsList, setTopicSlug, setQuerystate}) => {
             setQuerystate(topicSelect ? "?topic=" + topicSelect : "");
         }}>Go</Link>
         </button>
-       </div>
-       <div id="sort-query">
+        </div>
+        <div id="sort-query">
         <label>Sort by</label>
         <select>
                 <option>Article Id</option>
@@ -36,8 +37,9 @@ const QueryForm = ({topicsList, setTopicSlug, setQuerystate}) => {
                 <option>Votes</option>
             </select>
             <button>Ascending</button>
-       </div>
+        </div>
     </form>
+   ) 
 }
 
 export default QueryForm;

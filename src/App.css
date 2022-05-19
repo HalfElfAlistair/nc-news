@@ -19,18 +19,10 @@ h3 {
   color: #1F1F1F;
 }
 
-form {
-  margin: 5%;
-  padding: 5%;
-  background-color: #FAF9F9;
-  border-radius: 3px;
-}
-
 #articles,
 .loading,
 #article-page,
-.article-info,
-.article-comments {
+.article-info {
   margin: 5%;
   padding: 2%;
   background-color: #FAF9F9;
@@ -113,6 +105,13 @@ ul {
   margin-bottom: 5%;
 }
 
+.optimistic-comment-card {
+  border: solid 2px #1BD16A;
+  border-radius: 3px;
+  margin-bottom: 5%;
+  padding-left: 5%;
+}
+
 .comment-content {
   display: block;
   margin-bottom: 5%;
@@ -123,7 +122,8 @@ ul {
   display: inline;
 }
 
-.comment-card button {
+.comment-card button,
+.optimistic-comment-card button {
   display: block;
   margin-bottom: 5%;
 }
@@ -136,6 +136,14 @@ ul {
   border-radius: 3px;
   font-size: 15px;
   padding: 10px;
+}
+
+#comment-submit {
+  background-color: #6B4D7C;
+  color: #FAF9F9;
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
 }
 
 #breadcrumbs {
@@ -213,7 +221,8 @@ ul {
 }
 
 #votes button,
-.comment-card button {
+.comment-card button,
+.optimistic-comment-card button {
   padding: 3px 2px 2px;
   width: 26px;
   height: 25px;
@@ -226,10 +235,37 @@ ul {
 }
 
 #votes svg,
-.comment-card svg {
+.comment-card svg,
+.optimistic-comment-card svg {
   margin: 0;
   color: #FAF9F9;
 }
+
+#query-form {
+  margin: 5%;
+  padding: 5%;
+  background-color: #FAF9F9;
+  border-radius: 3px;
+}
+
+#add-comment {
+  margin-top: 5%;
+}
+
+#comment-input,
+#comment-submit {
+  display: inline;
+}
+
+#comment-input {
+  border-radius: 3px;
+  font-size: 15px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+
+
 
 /* #topic-query {
   border-right: solid 1px #E5E4E4;
