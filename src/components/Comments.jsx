@@ -21,7 +21,7 @@ const Comments = ({article, setError}) => {
             .catch((err) => {
                 setError({ err });
             });
-    }, [article.article_id, setError])
+    }, [article.article_id, setError, article.comment_count])
 
     const showHideComments = (viewState) => {
         return (viewState === "Show Comments") 
@@ -47,7 +47,6 @@ const Comments = ({article, setError}) => {
         return (
             <div className="article-comments">
                 <h3>Comments</h3>
-                {/* <p>{article.comment_count} comments</p> */}
                 <p>{commentCount} comments</p>
                 <button className="view-toggle" onClick={(e) => {
                     (commentsView === "Show Comments") 
@@ -59,12 +58,7 @@ const Comments = ({article, setError}) => {
                     <div id="comments-feed">
                         {showHideComments(commentsView)}
                     </div>
-                    <AddComment setCommentsList={setCommentsList} setCommentCount={setCommentCount} />
-                {/* <div>
-                    <label>Add a comment</label>
-                    <input type="text"></input>
-                    <button>Post</button>
-                </div> */}
+                    <AddComment setCommentsList={setCommentsList} setCommentCount={setCommentCount} article={article} setError={setError} />
             </div>
         )
     }
