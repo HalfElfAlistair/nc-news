@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { postComment } from "../utils/api";
 
-const AddComment = ({setCommentsList, setCommentCount}) => {
+const AddComment = ({setCommentsList, setCommentCount, article, setError}) => {
 
     const [commentText, setCommentText] = useState("");
 
@@ -8,13 +9,14 @@ const AddComment = ({setCommentsList, setCommentCount}) => {
         <form id="add-comment" onSubmit={(e) => {
             e.preventDefault();
             setCommentsList((currComments) => {
-                let copiedComments = [...currComments];
-                const newCommentId = copiedComments[currComments.length-1].comment_id += 1;
-                return [...currComments, {body: commentText, author: "guest", comment_id: newCommentId}]  
+                return [...currComments, {body: commentText, author: "grumpy19", comment_id: "newComment"}]
             })
             setCommentCount((currCount) => {
                 return currCount += 1;
             })
+            postComment(article.article_id, {body: commentText, username: "grumpy19"})
+                .catch((err) => {
+                    setError({ err })})
             setCommentText("");
             }}>
             <input id="comment-input" type="text" onFocus={(e) => {
