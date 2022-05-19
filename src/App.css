@@ -105,6 +105,13 @@ ul {
   margin-bottom: 5%;
 }
 
+.optimistic-comment-card {
+  border: solid 2px #1BD16A;
+  border-radius: 3px;
+  margin-bottom: 5%;
+  padding-left: 5%;
+}
+
 .comment-content {
   display: block;
   margin-bottom: 5%;
@@ -115,7 +122,8 @@ ul {
   display: inline;
 }
 
-.comment-card button {
+.comment-card button,
+.optimistic-comment-card button {
   display: block;
   margin-bottom: 5%;
 }
@@ -213,7 +221,8 @@ ul {
 }
 
 #votes button,
-.comment-card button {
+.comment-card button,
+.optimistic-comment-card button {
   padding: 3px 2px 2px;
   width: 26px;
   height: 25px;
@@ -226,7 +235,8 @@ ul {
 }
 
 #votes svg,
-.comment-card svg {
+.comment-card svg,
+.optimistic-comment-card svg {
   margin: 0;
   color: #FAF9F9;
 }
