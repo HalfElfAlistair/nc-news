@@ -38,3 +38,14 @@ export const patchArticleById = (id, votesObj) => {
             return data;
         })      
 }
+
+export const postComment = (id, obj) => {
+    return ncNewsApi.post(`/articles/${id}/comments`, obj)
+        .then(({ data }) => {
+            console.log("data===>", data)
+            return data;
+        })
+        // .catch((err) => {
+        //     console.log("err===>", err)
+        // })      
+}
