@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { postComment } from "../utils/api";
 
-const AddComment = ({setCommentsList, setCommentCount, article, setError}) => {
+const AddComment = ({setCommentsList, setCommentCount, article, setError, currentUser}) => {
 
     const [commentText, setCommentText] = useState("");
 
@@ -9,12 +9,12 @@ const AddComment = ({setCommentsList, setCommentCount, article, setError}) => {
         <form id="add-comment" onSubmit={(e) => {
             e.preventDefault();
             setCommentsList((currComments) => {
-                return [...currComments, {body: commentText, author: "grumpy19", comment_id: "newComment"}]
+                return [...currComments, {body: commentText, author: currentUser, comment_id: "newComment"}]
             })
             setCommentCount((currCount) => {
                 return currCount += 1;
             })
-            postComment(article.article_id, {body: commentText, username: "grumpy19"})
+            postComment(article.article_id, {body: commentText, username: currentUser})
                 .catch((err) => {
                     setError({ err })})
             setCommentText("");
