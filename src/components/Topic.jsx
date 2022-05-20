@@ -5,7 +5,11 @@ import { capitalise, topicDescription } from '../utils/helpers';
 const Topic = ({topicsList, queryState, topicSlug, setQueryState}) => {
 
     useEffect(()=>{
-        setQueryState("?topic=" + topicSlug)
+        setQueryState((currQuery) => {
+            let newQuery = {...currQuery}
+            newQuery.topic = topicSlug;
+            return newQuery;
+        })
     },[topicSlug, setQueryState])
 
     return <section>

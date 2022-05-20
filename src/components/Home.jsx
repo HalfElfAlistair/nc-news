@@ -5,7 +5,11 @@ import Articles from './Articles';
 const Home = ({topicsList, setTopicSlug, queryState, setError, setQueryState}) => {
 
     useEffect(()=>{
-        setQueryState("")
+        setQueryState((currQuery) => {
+            let newQuery = {...currQuery}
+            newQuery.topic = "";
+            return newQuery;
+        })
     },[setQueryState])
 
     return <section>
