@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { routeSelect } from '../utils/helpers';
 
 
-const QueryForm = ({topicsList, setTopicSlug, setQuerystate}) => {
+const QueryForm = ({topicsList, setTopicSlug, setQuerystate, setQueryState}) => {
 
     const [routeState, setRouteState] = useState("");
 
@@ -25,13 +25,16 @@ const QueryForm = ({topicsList, setTopicSlug, setQuerystate}) => {
         <button>
         <Link to={routeState} onClick={(e) => {
             setTopicSlug(topicSelect);
-            setQuerystate(topicSelect ? "?topic=" + topicSelect : "");
+            setQueryState(topicSelect ? "?topic=" + topicSelect : "");
+            // console.log(querystate)
         }}>Go</Link>
         </button>
         </div>
         <div id="sort-query">
         <label>Sort by</label>
-        <select>
+        <select onChange={(event) => {
+
+        }}>
                 <option>Article Id</option>
                 <option>Date Created</option>
                 <option>Votes</option>

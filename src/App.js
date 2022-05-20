@@ -18,7 +18,7 @@ function App() {
 
   const [topicsList, setTopicsList] = useState([]);
 
-  const [queryState, setQuerystate] = useState("");
+  const [queryState, setQueryState] = useState("");
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -56,10 +56,12 @@ function App() {
           <Route path={"/"} element={<Home 
           topicsList={topicsList} 
           setTopicSlug={setTopicSlug} 
-          queryState={queryState} setQuerystate={setQuerystate} 
+          // queryState={queryState} setQuerystate={setQuerystate} 
+          queryState={queryState} setQueryState={setQueryState}
           setError={setError}
           />} />
-          <Route path={`/${topicSlug}`} element={<Topic topicsList={topicsList} queryState={queryState} setQuerystate={setQuerystate} topicSlug={topicSlug} />} />
+          {/* <Route path={`/${topicSlug}`} element={<Topic topicsList={topicsList} queryState={queryState} setQuerystate={setQuerystate} topicSlug={topicSlug} />} /> */}
+          <Route path={`/${topicSlug}`} element={<Topic topicsList={topicsList} queryState={queryState} setQueryState={setQueryState} topicSlug={topicSlug} />} />
           <Route path={`/articles/:id`} element={<ArticlePage setError={setError} />} />
           <Route path="*" element={<ErrorPage/>} />
         </Routes>
