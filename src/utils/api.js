@@ -5,7 +5,22 @@ const ncNewsApi = axios.create({
 });
 
 export const getArticles = (query) => {
-    return ncNewsApi.get((query) ? `/articles${query}` : "/articles")
+    // console.log("query topic===>", query.topic)
+    // console.log("query sort_by===>", query["sort_by"])
+    // console.log("query order===>", query.order)
+    // console.log("query topic===>", query.topic === true ? "true" : "false")
+    // console.log("query topic===>", query.topic)
+    // console.log("query topic===>", query.topic.length > 0 ? "true" : "false")
+    // console.log("query string===>", `/articles?topic=${query.topic}?sort_by=${query["sort_by"]}&order=${query.order}`)
+    // console.log("query string2===>", `/articles?sort_by=${query["sort_by"]}&order=${query.order}`)
+    return ncNewsApi.get(
+        (query.topic)
+        ? `/articles?topic=${query.topic}`
+        : `/articles?sort_by=${query["sort_by"]}&order=${query.order}`
+        // (query.topic) 
+        // ? `/articles?topic=${query.topic}?sort_by=${query["sort_by"]}&order=${query.order}` 
+        // : `/articles?sort_by=${query["sort_by"]}&order=${query.order}`
+        )
         .then(({ data }) => {
             return data.articles;
         })      
