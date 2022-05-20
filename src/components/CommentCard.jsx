@@ -1,6 +1,6 @@
 import { MdDelete } from "react-icons/md";
 
-const CommentCard = ({commentData}) => {
+const CommentCard = ({commentData, currentUser}) => {
 
     return (
         <div className={commentData.comment_id === "newComment" ? "optimistic-comment-card" : "comment-card"}>
@@ -8,7 +8,7 @@ const CommentCard = ({commentData}) => {
                 <p className="comment-author"><strong>{commentData.author}</strong>: </p>
                 <p className="comment-body">{commentData.body}</p>
             </div>
-            <button aria-label="delete"><MdDelete/></button>
+            {currentUser === commentData.author ? <button aria-label="delete"><MdDelete/></button> : <></>}
         </div>
     )   
 }
