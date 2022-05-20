@@ -2,11 +2,15 @@ import { useEffect } from "react";
 import Articles from './Articles';
 import { capitalise, topicDescription } from '../utils/helpers';
 
-const Topic = ({topicsList, queryState, setQuerystate, topicSlug}) => {
+const Topic = ({topicsList, queryState, topicSlug, setQueryState}) => {
 
     useEffect(()=>{
-        setQuerystate("?topic=" + topicSlug)
-    },[topicSlug, setQuerystate])
+        setQueryState((currQuery) => {
+            let newQuery = {...currQuery}
+            newQuery.topic = topicSlug;
+            return newQuery;
+        })
+    },[topicSlug, setQueryState])
 
     return <section>
         <div>

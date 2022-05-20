@@ -3,11 +3,20 @@ import { Link } from 'react-router-dom';
 import { routeSelect } from '../utils/helpers';
 
 
-const QueryForm = ({topicsList, setTopicSlug, setQuerystate}) => {
+const QueryForm = ({topicsList, setTopicSlug, setQueryState}) => {
 
     const [routeState, setRouteState] = useState("");
-
     const [topicSelect, setTopicSelect] = useState("");
+    const [orderState, setOrderState] = useState("desc");
+
+    const queryChange = (queryKey, queryValue) => {
+        setQueryState((currQuery) => {
+            let newQuery = {...currQuery}
+            newQuery[queryKey] = (queryValue) ? queryValue : "";
+            return newQuery
+        })
+    }
+
 
    return (
     <form id="query-form">
@@ -25,18 +34,26 @@ const QueryForm = ({topicsList, setTopicSlug, setQuerystate}) => {
         <button>
         <Link to={routeState} onClick={(e) => {
             setTopicSlug(topicSelect);
-            setQuerystate(topicSelect ? "?topic=" + topicSelect : "");
+            queryChange("topic", topicSelect)
         }}>Go</Link>
         </button>
         </div>
         <div id="sort-query">
         <label>Sort by</label>
-        <select>
-                <option>Article Id</option>
-                <option>Date Created</option>
-                <option>Votes</option>
+        <select onChange={(event) => {
+            queryChange("sort_by", event.target.value)
+        }}>
+                <option value="created_at">Date Created</option>
+                <option value="article_id">Article Id</option>
+                <option value="votes">Votes</option>
             </select>
-            <button>Ascending</button>
+            <button onClick={(event) => {
+                event.preventDefault();
+                setOrderState((currOrder) => {
+                    return currOrder === "asc" ? "desc" : "asc";
+                })
+                queryChange("order", orderState)
+            }}>{orderState === "asc" ? "Descending" : "Ascending"}</button>
         </div>
     </form>
    ) 
