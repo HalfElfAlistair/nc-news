@@ -5,7 +5,7 @@ import {dateExtract} from "../utils/helpers";
 import Votes from './Votes';
 import Comments from './Comments';
 
-const ArticlePage = ({setError}) => {
+const ArticlePage = ({setError, currentUser}) => {
 
     const {id} = useParams();
 
@@ -36,7 +36,7 @@ const ArticlePage = ({setError}) => {
                 <p>Posted on {dateExtract(article.created_at)}</p>
                 <p className="content">{article.body}</p>
                 <Votes article={article} setError={setError} />
-                <Comments article={article} setError={setError} />
+                <Comments article={article} setError={setError} currentUser={currentUser} />
             </div>
             
         </section>

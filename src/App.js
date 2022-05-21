@@ -18,13 +18,11 @@ function App() {
 
   const [topicsList, setTopicsList] = useState([]);
 
-  // const [queryState, setQueryState] = useState("");
-  // const [queryState, setQueryState] = useState("?sort_by=created_at&order=asc");
   const [queryState, setQueryState] = useState({topic: "", "sort_by": "created_at", order: "desc"});
 
-  // {topic: "", "sort_by": "created_at", order: "desc"}
-
   const [isLoading, setIsLoading] = useState(true);
+  
+  const [currentUser, setCurrentuser] = useState("grumpy19");
 
   const [error, setError] = useState(null);
 
@@ -60,13 +58,11 @@ function App() {
           <Route path={"/"} element={<Home 
           topicsList={topicsList} 
           setTopicSlug={setTopicSlug} 
-          // queryState={queryState} setQuerystate={setQuerystate} 
           queryState={queryState} setQueryState={setQueryState}
           setError={setError}
           />} />
-          {/* <Route path={`/${topicSlug}`} element={<Topic topicsList={topicsList} queryState={queryState} setQuerystate={setQuerystate} topicSlug={topicSlug} />} /> */}
           <Route path={`/${topicSlug}`} element={<Topic topicsList={topicsList} queryState={queryState} setQueryState={setQueryState} topicSlug={topicSlug} />} />
-          <Route path={`/articles/:id`} element={<ArticlePage setError={setError} />} />
+          <Route path={`/articles/:id`} element={<ArticlePage setError={setError} currentUser={currentUser} />} />
           <Route path="*" element={<ErrorPage/>} />
         </Routes>
     </div>

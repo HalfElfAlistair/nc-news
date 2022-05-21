@@ -4,7 +4,7 @@ import CommentCard from "./CommentCard";
 import AddComment from "./AddComment";
 
 
-const Comments = ({article, setError}) => {
+const Comments = ({article, setError, currentUser}) => {
 
     const [commentsList, setCommentsList] = useState([]);
     const [commentsView, setCommentsView] = useState("Show Comments");
@@ -31,7 +31,7 @@ const Comments = ({article, setError}) => {
         (
             <ul>
                 {commentsList.map((commentData) => {
-                    return <CommentCard key={commentData.comment_id} commentData={commentData} />
+                    return <CommentCard key={commentData.comment_id} commentData={commentData} currentUser={currentUser} setError={setError} />
                 })}
             </ul>
         )
@@ -58,7 +58,7 @@ const Comments = ({article, setError}) => {
                     <div id="comments-feed">
                         {showHideComments(commentsView)}
                     </div>
-                    <AddComment setCommentsList={setCommentsList} setCommentCount={setCommentCount} article={article} setError={setError} />
+                    <AddComment setCommentsList={setCommentsList} setCommentCount={setCommentCount} article={article} setError={setError} currentUser={currentUser} />
             </div>
         )
     }
