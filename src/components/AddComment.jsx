@@ -15,8 +15,7 @@ const AddComment = ({setCommentsList, setCommentCount, article, setError, curren
                 return currCount += 1;
             })
             postComment(article.article_id, {body: commentText, username: currentUser})
-                .catch((err) => {
-                    setError({ err })})
+                .catch((err) => setError({ err }))
             setCommentText("");
             }}>
             <input id="comment-input" type="text" onFocus={(e) => {
