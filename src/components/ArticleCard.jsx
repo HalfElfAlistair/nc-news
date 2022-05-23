@@ -6,11 +6,9 @@ const ArticleCard = ({ articleData }) => {
     return <li className="article-card">
             <h3>{articleData.title}</h3>
             <div className="article-card-top">
-                <div className="by-on-area">
-                    <p>By: {articleData.author}</p>
-                    <p>On: {dateExtract(articleData.created_at)}</p>
-                </div>
-                    <p className="article-id">#{articleData.article_id}</p>
+                <p>By: {articleData.author}</p>
+                <p>On: {dateExtract(articleData.created_at)}</p>
+                <p>{articleData["comment_count"]} comments</p>
             </div>
             <div className="article-card-bottom">
                 <p>Votes: {articleData.votes}</p>
