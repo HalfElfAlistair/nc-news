@@ -18,7 +18,7 @@ function App() {
 
   const [topicsList, setTopicsList] = useState([]);
 
-  const [queryState, setQueryState] = useState({topic: "", "sort_by": "created_at", order: "desc"});
+  const [queryState, setQueryState] = useState({topic: "", sortAndOrderBy: "?sort_by=created_at&order=desc"});
 
   const [isLoading, setIsLoading] = useState(true);
   

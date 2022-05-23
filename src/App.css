@@ -37,11 +37,11 @@ h3 {
   border-radius: 3px;
 }
 
-form {
+/* form {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-}
+} */
 
 form * label {
   display: block;
@@ -69,7 +69,6 @@ form * button a {
   color: #FAF9F9;
 }
 
-form * select,
 form * select {
   text-align: center;
   color: #6B4D7C;
@@ -277,12 +276,33 @@ ul {
   padding-bottom: 4px;
 }
 
+#topic-query-inputs {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+#topic-query label {
+  text-align: center;
+}
+
+#topic-query select {
+  width: 170px;
+}
+
+#topic-query button {
+  width: 70px;
+}
+
+#sort-query {
+  margin: 5% 0;
+}
+
+#sort-query select {
+  width: 100%;
+}
 
 
-
-/* #topic-query {
-  border-right: solid 1px #E5E4E4;
-} */
 
 
 @media only screen and (min-width: 1024px) {
@@ -297,11 +317,11 @@ ul {
     display: inline;
   }
 
-  form #topic-query {
+  #topic-query {
     margin-right: 5%;
   }
 
-  form #sort-query {
+  #sort-query {
     margin-left: 5%;
   }
 
