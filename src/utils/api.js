@@ -8,10 +8,7 @@ export const getArticles = (query) => {
     return ncNewsApi.get(
         (query.topic)
         ? `/articles?topic=${query.topic}`
-        : `/articles?sort_by=${query["sort_by"]}&order=${query.order}`
-        // (query.topic) 
-        // ? `/articles?topic=${query.topic}?sort_by=${query["sort_by"]}&order=${query.order}` 
-        // : `/articles?sort_by=${query["sort_by"]}&order=${query.order}`
+        : `/articles${query.sortAndOrderBy}`
         )
         .then(({ data }) => {
             return data.articles;
