@@ -46,10 +46,10 @@ const QueryForm = ({topicsList, setTopicSlug, setQueryState}) => {
             }}>
                     <option value="?sort_by=created_at&order=desc">Date Created: New-Old</option>
                     <option value="?sort_by=created_at&order=asc">Date Created: Old-New</option>
-                    <option value="?sort_by=article_id&order=desc">Article Id: High-Low</option>
-                    <option value="?sort_by=article_id&order=asc">Article Id: Low-High</option>
                     <option value="?sort_by=votes&order=desc">Votes: Most-Least</option>
                     <option value="?sort_by=votes&order=asc">Votes: Least-Most</option>
+                    <option value="?sort_by=comment_count&order=desc">Comments: Most-Least</option>
+                    <option value="?sort_by=comment_count&order=asc">Comments: Least-Most</option>
                 </select>
         </div>
     </form>
