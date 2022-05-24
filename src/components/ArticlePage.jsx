@@ -8,9 +8,7 @@ import Comments from './Comments';
 const ArticlePage = ({setError, currentUser}) => {
 
     const {id} = useParams();
-
     const [isLoading, setIsLoading] = useState(true);
-
     const [article, setArticle] = useState();
 
     useEffect(() => {

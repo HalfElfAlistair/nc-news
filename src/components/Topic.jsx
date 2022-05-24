@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import Articles from './Articles';
-import { capitalise, topicDescription } from '../utils/helpers';
+import { capitalise, topicFilter } from '../utils/helpers';
 
-const Topic = ({topicsList, queryState, topicSlug, setQueryState}) => {
+const Topic = ({topicsList, queryState, topicSlug, setQueryState, setError}) => {
 
     useEffect(()=>{
         setQueryState((currQuery) => {
@@ -12,15 +12,30 @@ const Topic = ({topicsList, queryState, topicSlug, setQueryState}) => {
         })
     },[topicSlug, setQueryState])
 
-    return <section>
-        <div>
-            <div className="page-intro">
-                <h2>{capitalise(topicSlug)}</h2>
-                <p>{topicDescription(topicsList, topicSlug).description}</p>
+    const topicDescription = topicFilter(topicsList, topicSlug).description;
+
+    useEffect(() => {
+        if (!topicDescription) {
+            const error = {err: {response: {status: 404, data: {msg: "Path not found"}}}}
+            setError(error)
+        } 
+    }, [])
+
+
+    return (
+        <section>
+            <div>
+                <div className="page-intro">
+                    <h2>{capitalise(topicSlug)}</h2>
+                    <p>{topicDescription}</p>
+                </div>
+                <Articles queryState={queryState} topicSlug={topicSlug} />
             </div>
-            <Articles queryState={queryState} topicSlug={topicSlug} />
-        </div>
-    </section>;
+        </section>
+    ) 
+    
+
+    
 }
 
 export default Topic;

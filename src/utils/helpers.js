@@ -13,10 +13,9 @@ export const routeSelect = (topic) => {
     return "/" + topic;
 }
 
-export const topicDescription = (topics, currSlug) => {
-    
+export const topicFilter = (topics, currSlug) => {
     const currTopic = topics.filter(topic => topic.slug === currSlug);
-    return currTopic[0];
+    return currTopic[0] ? currTopic[0] : "";
 }
 
 export const dateExtract = (timeStamp) => {

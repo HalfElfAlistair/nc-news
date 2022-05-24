@@ -40,7 +40,7 @@ function App() {
   if (error) {
     return (
       <div>
-        <Breadcrumbs topicSlug={topicSlug} topicsList={topicsList}/>
+        <Breadcrumbs topicSlug={topicSlug} topicsList={topicsList} error={error} />
         <ErrorPage message={error} />
       </div>
     ) 
@@ -61,7 +61,7 @@ function App() {
           queryState={queryState} setQueryState={setQueryState}
           setError={setError}
           />} />
-          <Route path={`/${topicSlug}`} element={<Topic topicsList={topicsList} queryState={queryState} setQueryState={setQueryState} topicSlug={topicSlug} />} />
+          <Route path={`/${topicSlug}`} element={<Topic topicsList={topicsList} queryState={queryState} setQueryState={setQueryState} topicSlug={topicSlug} setError={setError} />} />
           <Route path={`/articles/:id`} element={<ArticlePage setError={setError} currentUser={currentUser} />} />
           <Route path="*" element={<ErrorPage/>} />
         </Routes>
