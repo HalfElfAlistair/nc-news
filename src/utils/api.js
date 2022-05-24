@@ -33,7 +33,7 @@ export const getArticleById = (id) => {
     return ncNewsApi.get(`/articles/${id}`)
         .then(({ data }) => {
             return data.article;
-        })      
+        })
 }
 
 export const patchArticleById = (id, votesObj) => {
