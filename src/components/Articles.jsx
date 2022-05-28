@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ArticleCard from "./ArticleCard";
 import { getArticles } from "../utils/api";
+import "../assets/Articles.css";
 
 const Articles = ({queryState, topic, topicSlug, setError}) => {
 
@@ -20,17 +21,21 @@ const Articles = ({queryState, topic, topicSlug, setError}) => {
     }, [queryState, setError])
 
     if (isLoading) {
-        return <div className="loading">
+        return (
+            <div className="loading">
                 <p>Just fetching the articles now...</p>
             </div>
+        ) 
     } else {
-        return <div id="articles">
-            <ul>
-                {articlesList.map((articleData) => {
-                    return <ArticleCard key={articleData.article_id} articleData={articleData} topic={topic} id={articleData.article_id} topicSlug={topicSlug}/>
-                })}
-            </ul>
-        </div>
+        return (
+            <div id="articles">
+                <ul>
+                    {articlesList.map((articleData) => {
+                        return <ArticleCard key={articleData.article_id} articleData={articleData} topic={topic} id={articleData.article_id} topicSlug={topicSlug}/>
+                    })}
+                </ul>
+            </div>
+        ) 
     }
 
     

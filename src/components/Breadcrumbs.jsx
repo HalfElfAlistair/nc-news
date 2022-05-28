@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { capitalise, topicCheck } from '../utils/helpers';
+import "../assets/Breadcrumbs.css";
 
 const Breadcrumbs = ({setTopicSlug, topicSlug, topicsList, error}) => {
         

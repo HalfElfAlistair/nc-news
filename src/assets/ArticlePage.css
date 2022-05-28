@@ -1,0 +1,29 @@
+.article-page {
+  margin: 5%;
+  padding: 5%;
+  background-color: #FAF9F9;
+  border-radius: 3px;
+}
+
+.article-info {
+  background-color: #FAF9F9;
+  border-radius: 3px;
+}
+
+.article-info h2 {
+    color: #6B4D7C;
+}
+
+@media only screen and (min-width: 1024px) {
+  .article-page {
+    width: 819px;
+    margin-left: auto;
+    margin-right: auto;
+  }  
+}
+
+@media only screen and (min-width: 1440px) {
+  .article-page {
+      width: 57%;
+  }
+}

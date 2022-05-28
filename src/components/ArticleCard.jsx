@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import {dateExtract} from "../utils/helpers";
+import "../assets/ArticleCard.css"
 
 const ArticleCard = ({ articleData }) => {
  

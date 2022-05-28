@@ -1,6 +1,7 @@
 import { MdDelete } from "react-icons/md";
 import { useState } from "react";
 import { deleteComment } from "../utils/api";
+import "../assets/CommentCard.css";
 
 const CommentCard = ({commentData, currentUser, setError}) => {
 
@@ -21,7 +22,7 @@ const CommentCard = ({commentData, currentUser, setError}) => {
                 <p className="comment-body">{commentData.body}</p>
             </div>
             {currentUser === commentData.author 
-            ? <button aria-label="delete" onClick={(e) => deleteCheck()} ><MdDelete/></button> 
+            ? <button className="icon-button" aria-label="delete" onClick={(e) => deleteCheck()} ><MdDelete/></button> 
             : <></>}
         </div>
     )

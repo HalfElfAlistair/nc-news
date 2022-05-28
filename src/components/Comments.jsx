@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getComments } from "../utils/api";
 import CommentCard from "./CommentCard";
 import AddComment from "./AddComment";
+import "../assets/Comments.css";
 
 
 const Comments = ({article, setError, currentUser}) => {
@@ -45,7 +46,7 @@ const Comments = ({article, setError, currentUser}) => {
         )
     } else {
         return (
-            <div className="article-comments">
+            <div>
                 <h3>Comments</h3>
                 <p>{commentCount} comments</p>
                 <button className="view-toggle" onClick={(e) => {
@@ -55,7 +56,7 @@ const Comments = ({article, setError, currentUser}) => {
                     : 
                     setCommentsView("Show Comments")
                     }}>{commentsView}</button>
-                    <div id="comments-feed">
+                    <div>
                         {showHideComments(commentsView)}
                     </div>
                     <AddComment setCommentsList={setCommentsList} setCommentCount={setCommentCount} article={article} setError={setError} currentUser={currentUser} />

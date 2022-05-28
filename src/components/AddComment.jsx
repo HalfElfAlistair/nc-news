@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { postComment } from "../utils/api";
+import "../assets/AddComment.css";
 
 const AddComment = ({setCommentsList, setCommentCount, article, setError, currentUser}) => {
 
@@ -27,7 +28,7 @@ const AddComment = ({setCommentsList, setCommentCount, article, setError, curren
             onBlur={(e) => {
                 (commentText) ? e.target.value = commentText : e.target.value = "add your comment...";
             }}
-            defaultValue="add your comment..."></input>
+            defaultValue="add your comment here..."></input>
             {(commentText) ? <button id="comment-submit">Post</button> : <></>}
         </form>
     )

@@ -1,0 +1,94 @@
+#query-form {
+    margin: 5%;
+    padding: 5%;
+    background-color: #FAF9F9;
+    border-radius: 3px;
+}
+
+#topic-query {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+#topic-query-inputs {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#topic-query label {
+    text-align: center;
+}
+
+#topic-query select {
+    flex-grow: 1;
+}
+
+#topic-query button {
+    margin-left: 8px;
+    width: 70px;
+}
+
+#sort-query {
+    margin: 5% 0;
+}
+
+#sort-query select {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (min-width: 450px) {
+    #topic-query,
+    #sort-query select {
+        width: 360px;
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    #query-form {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 5%;
+
+    }
+
+    #topic-query,
+    #sort-query {
+        flex-grow: 1;
+        width: 37%;
+    }
+
+    #topic-query,
+    #sort-query {
+        margin: 0;
+    }
+    
+    #sort-query select {
+        width: 100%;
+    }
+
+}
+
+
+@media only screen and (min-width: 1024px) {
+    #query-form {
+        width: 819px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #query-form select,
+    #query-form button {
+        padding: 11px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    #query-form {
+        width: 57%;
+    }
+}

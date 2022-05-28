@@ -1,0 +1,14 @@
+.view-toggle {
+    background-color: #6B4D7C;
+    color: #FAF9F9;
+    width: 150px;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+@media only screen and (min-width: 1024px) {
+    .view-toggle {
+        padding: 11px;
+    }
+}

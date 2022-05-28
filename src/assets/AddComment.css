@@ -1,0 +1,30 @@
+#add-comment {
+    margin-top: 5%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 5%;
+}
+
+#comment-input,
+#comment-submit {
+    border-radius: 3px;
+}
+
+#comment-input {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: #FAF9F9;
+}
+
+#comment-submit {
+    background-color: #6B4D7C;
+    color: #FAF9F9;
+    border: none;
+}
+
+@media only screen and (min-width: 640px) {
+    #comment-input {
+        width: 40%;
+    }
+}

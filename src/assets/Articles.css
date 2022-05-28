@@ -1,0 +1,44 @@
+#articles {
+  margin: 5%;
+  padding: 5%;
+  background-color: #FAF9F9;
+  border-radius: 3px;
+}
+
+@media only screen and (min-width: 450px) {
+  #articles ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    gap: 5%;
+    align-items: flex-start;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  #articles ul {
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #articles {
+    width: 819px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #articles ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  #articles {
+    width: 57%;
+  }
+}
+
+
