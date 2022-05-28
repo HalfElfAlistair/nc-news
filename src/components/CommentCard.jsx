@@ -18,12 +18,12 @@ const CommentCard = ({commentData, currentUser, setError}) => {
     (
         <div className={commentData.comment_id === "newComment" ? "optimistic-comment-card" : "comment-card"}>
             <div className="comment-content">
+                {currentUser === commentData.author 
+                ? <button className="icon-button" aria-label="delete" onClick={(e) => deleteCheck()} ><MdDelete/></button> 
+                : <></>}
                 <p className="comment-author"><strong>{commentData.author}</strong>: </p>
                 <p className="comment-body">{commentData.body}</p>
             </div>
-            {currentUser === commentData.author 
-            ? <button className="icon-button" aria-label="delete" onClick={(e) => deleteCheck()} ><MdDelete/></button> 
-            : <></>}
         </div>
     )
     :
