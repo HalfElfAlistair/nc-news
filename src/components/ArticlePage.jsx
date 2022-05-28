@@ -31,7 +31,7 @@ const ArticlePage = ({setError, currentUser}) => {
         ) 
     } else {
         return (
-            <section className="article-page">
+            <main className="article-page">
                 <div className="article-info">
                     <h2>{article.title}</h2>
                     <p>By {article.author}</p>
@@ -40,7 +40,7 @@ const ArticlePage = ({setError, currentUser}) => {
                     <Votes article={article} setError={setError} />
                     <Comments article={article} setError={setError} currentUser={currentUser} />
                 </div>
-            </section>
+            </main>
         ) 
     }
 
