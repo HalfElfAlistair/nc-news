@@ -1,19 +1,19 @@
 import { MdDelete } from "react-icons/md";
 import { useState } from "react";
-import { deleteComment } from "../utils/api";
+import DeletionChecker from "./DeletionChecker";
 import "../assets/CommentCard.css";
 
-const CommentCard = ({commentData, currentUser, setError}) => {
+const CommentCard = ({commentData, currentUser, setCommentCount, setError}) => {
 
-    const [deleteStatus, setDeleteStatus] = useState("active");
+    const [deleteStatus, setDeleteStatus] = useState(false);
+    const [checkScreen, setCheckScreen] = useState(false);
 
     const deleteCheck = () => {
-        setDeleteStatus("deleted")
-        deleteComment(commentData.comment_id)
-            .catch((err) => setError({ err }))
+        setCheckScreen(true);
+        setDeleteStatus(true);
     }
 
-    return deleteStatus === "active" 
+    return !deleteStatus 
     ? 
     (
         <div className={commentData.comment_id === "newComment" ? "optimistic-comment-card" : "comment-card"}>
@@ -29,7 +29,7 @@ const CommentCard = ({commentData, currentUser, setError}) => {
     :
     (
         <div className="comment-card">
-            <p>Comment deleted.</p>
+            {checkScreen ? <DeletionChecker setDeleteStatus={setDeleteStatus} setCommentCount={setCommentCount} commentData={commentData} setCheckScreen={setCheckScreen} setError={setError} /> : <p>Comment deleted.</p>}
         </div>
     )
 }
