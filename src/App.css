@@ -109,23 +109,10 @@ svg {
   button {
     font-size: 16px;
   }
-
-  /* form {
-    margin: 5% 10%;
-  } */
-
-  /* form * {
-    display: inline;
-  } */
-
 }
 
 @media only screen and (min-width: 1440px) {
   .page-intro {
     width: 57%;
   }
-  
-  /* form {
-    margin: 5% 5%;
-  } */
 }
