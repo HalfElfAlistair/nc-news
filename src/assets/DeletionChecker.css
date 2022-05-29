@@ -1,0 +1,27 @@
+#buttons-area {
+    display: flex;
+    gap: 5%;
+}
+
+#buttons-area button {
+    padding: 10px;
+    width: 120px;
+    border-radius: 3px;
+    border: solid 2px #6B4D7C;
+  }
+
+  #yes-button {
+    background-color: #6B4D7C;
+    color: #FAF9F9;
+  }
+
+  #no-button {
+    background-color: #FAF9F9;
+    color: #6B4D7C;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    #buttons-area button {
+        padding: 11px;
+    }
+}
