@@ -22,7 +22,8 @@ function App() {
 
   const [isLoading, setIsLoading] = useState(true);
   
-  const [currentUser, setCurrentuser] = useState("grumpy19");
+  // As logins/user authentication aren't in the mvp for this project, I've left out a setState for the currentUser and hard-coded a user state
+  const [currentUser] = useState("grumpy19");
 
   const [error, setError] = useState(null);
 
