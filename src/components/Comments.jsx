@@ -32,7 +32,7 @@ const Comments = ({article, setError, currentUser}) => {
         (
             <ul>
                 {commentsList.map((commentData) => {
-                    return <CommentCard key={commentData.comment_id} commentData={commentData} currentUser={currentUser} setError={setError} />
+                    return <CommentCard key={commentData.comment_id} commentData={commentData} currentUser={currentUser} setCommentCount={setCommentCount} setError={setError} />
                 })}
             </ul>
         )

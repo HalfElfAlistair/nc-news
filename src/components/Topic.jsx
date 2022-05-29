@@ -19,7 +19,7 @@ const Topic = ({topicsList, queryState, topicSlug, setQueryState, setError}) => 
             const error = {err: {response: {status: 404, data: {msg: "Path not found"}}}}
             setError(error)
         } 
-    }, [])
+    }, [setError, topicDescription])
 
 
     return (
