@@ -45,7 +45,7 @@ To run this project locally, you'll need to do the following:
 
 Make sure you're using at least node version v14.18.1
 
-Fork this repo, then use the 'code' button to view the url, copy this
+Use the 'code' button to view the url, copy this
 
 Open your terminal, navigate to the directory you want the repo to be in ('cd <chosen-directory>'), then enter: 'git clone <repo-url>'. For a more detailed set of instructions, please use this handy guide from the [GitHub Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
