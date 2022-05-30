@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# NC-News
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A site displaying user written articles, which can be voted and commented on.
 
-## Available Scripts
+[https://ajss-ncnews.netlify.app](https://ajss-ncnews.netlify.app)
 
-In the project directory, you can run:
+## Contents
 
-### `npm start`
+- [Introduction](#Introduction)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Technologies](#Technologies)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Launch](#Launch)
 
-### `npm test`
+- [Author](#Author)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Acknowledgments](#Acknowledgments)
 
-### `npm run build`
+## Introduction
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The frontend project, completed for the Northcoders Bootcamp. Using React, I used my API from the [backend project](https://github.com/HalfElfAlistair/nc_backend_project) to access and display article, topic, comment and user data. As an MVP, the user can sort data in different ways, write and delete new comments, and vote on articles.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+There are select boxes to filter or sort articles, and a button on each card to view an article. Each article page has vote buttons, a comment view toggle and a text input for adding a new comment. The user can also see a delete icon next to each comment they have written, which, when pressed will check that they are sure they want to delete the comment. Overall navigation can be done with breadcrumbs, that fit the linear user journey better than a nav bar.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Aims
 
-### `npm run eject`
+- Responsively and accessibly present data from the backend project in a simple, stylish manner.
+- Provide interactivity for the user, so that they can contribute to the data via votes and comments.
+- Handle errors and present a message to the user that briefly advises them of what went wrong.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Technologies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- JavaScript
+- React
+- Node
+- Axios
+- CSS
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+got this far
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Launch
 
-## Learn More
+To run this project locally, you'll need to do the following:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Make sure you're using at least node version v14.18.1
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Fork this repo, then use the 'code' button to view the url, copy this
 
-### Code Splitting
+Open your terminal, navigate to the directory you want the repo to be in ('cd <chosen-directory>'), then enter: 'git clone <repo-url>'. For a more detailed set of instructions, please use this handy guide from the [GitHub Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Once in your cloned repository, enter 'npm start' to run the project in the development mode
 
-### Analyzing the Bundle Size
+You'll also need to make sure the following dependencies are installed:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Axios v-0.26.1
+- React v-18.0.0
+- React-dom v-18.0.0
+- React-icons v-4.3.1
+- React-router-dom v-6.3.0
+- React-scripts v-5.0.1
+- Web-vitals v-2.1.4
 
-### Making a Progressive Web App
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Alistair Sinclair-Smith
 
-### Advanced Configuration
+Email: [alistairjss90@gmail.com](alistairjss90@gmail.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+GitHub: [HalfElfAlistair](https://github.com/HalfElfAlistair)
 
-### Deployment
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### [Northcoders](https://northcoders.com/)
 
-### `npm run build` fails to minify
+This project was part of Northcoders bootcamp and their tutors were very helpful and supportive, much appreciated!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### [Netlify](https://www.netlify.com/)
+
+The site is hosted on Netlify.
+
+### [Heroku](https://www.heroku.com/)
+
+The API with backend data is hosted with Heroku.
+
+### [Tania Rascia](https://www.taniarascia.com/)
+
+I use this [Design for Developers](https://www.taniarascia.com/design-for-developers/) article for design pointers with most projects and this was no different. It's also perfect for this sort site, as it covers creating an article card.
+
+### [Colormind](http://colormind.io/)
+
+A solid recommendation from the Northcoders tutors, Colormind has been very useful at selecting a simple colour-scheme for design.
+
+### [WebAIM.org](https://webaim.org/)
+
+Their colour contrast checker helped me ensure my text would still be readable when using colour.
