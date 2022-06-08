@@ -20,9 +20,9 @@ const QueryForm = ({topicsList, setTopicSlug, setQueryState}) => {
    return (
     <form id="query-form">
         <div id="topic-query">
-            <label><strong>View by topic</strong></label>
+            <label for="topic-select"><strong>View by topic</strong></label>
             <div id="topic-query-inputs">
-                <select aria-expanded="false" onChange={(event) => {
+                <select id="topic-select" aria-expanded="false" onChange={(event) => {
                     setTopicSelect(event.target.value);
                     setRouteState(routeSelect(event.target.value));
                 }}>
@@ -40,8 +40,8 @@ const QueryForm = ({topicsList, setTopicSlug, setQueryState}) => {
             </div>
         </div>
         <div id="sort-query">
-            <label><strong>Sort by</strong></label>
-            <select onChange={(event) => {
+            <label for="sort-select"><strong>Sort by</strong></label>
+            <select id="sort-select" onChange={(event) => {
                 queryChange("sortAndOrderBy", event.target.value)
             }}>
                     <option value="?sort_by=created_at&order=desc">Date Created: Newest First</option>

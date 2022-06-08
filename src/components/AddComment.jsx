@@ -19,6 +19,7 @@ const AddComment = ({setCommentsList, setCommentCount, article, setError, curren
                 .catch((err) => setError({ err }))
             setCommentText("");
             }}>
+            <label for="comment-input">Your comment:</label>
             <input id="comment-input" type="text" onFocus={(e) => {
                 e.target.value = commentText;
             }}
