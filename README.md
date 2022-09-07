@@ -36,9 +36,6 @@ There are select boxes to filter or sort articles, and a button on each card to 
 - Axios
 - CSS
 
-got this far
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 ## Launch
 
 To run this project locally, you'll need to do the following:
